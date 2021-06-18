@@ -21,7 +21,6 @@ const expenses = [
 const App = () => {
   return (
     <div className="App">
-      <h2>Hello</h2>
       <Expenses expenses={expenses} />
     </div>
   );
