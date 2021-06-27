@@ -19,7 +19,7 @@ const Expenses = (props) => {
         title={el.title}
         amount={el.amount}
         date={el.date}
-        key={el.title}
+        key={el.id}
       />
     );
   });
