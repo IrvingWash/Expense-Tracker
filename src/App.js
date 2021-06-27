@@ -1,7 +1,9 @@
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
-const expenses = [
+import { useState } from 'react';
+
+const INITIAL_EPXENSES = [
   {
     title: 'Car Insurance',
     amount: 15000,
@@ -20,9 +22,12 @@ const expenses = [
 ];
 
 const App = () => {
+  const [expenses, setExpenses] = useState(INITIAL_EPXENSES);
+
   const addExpenseHandler = (expense) => {
-    console.log('Hi from App.js');
-    console.log(expense);
+    setExpenses((prevState) => {
+      return [expense, ...prevState];
+    });
   };
 
   return (
