@@ -23,16 +23,20 @@ const Expenses = (props) => {
     filteredExpenses = props.expenses;
   }
 
-  const expenses = filteredExpenses.map((el) => {
-    return (
-      <ExpenseItem
-        title={el.title}
-        amount={el.amount}
-        date={el.date}
-        key={el.id}
-      />
-    );
-  });
+  let expenses = <p>No expenses found</p>;
+
+  if (filteredExpenses.length > 0) {
+    expenses = filteredExpenses.map((el) => {
+      return (
+        <ExpenseItem
+          title={el.title}
+          amount={el.amount}
+          date={el.date}
+          key={el.id}
+        />
+      );
+    });
+  }
 
   return (
     <Card className="expenses">
